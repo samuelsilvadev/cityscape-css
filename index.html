@@ -11,6 +11,7 @@
         --primary-100: #523fd1;
         --primary-200: #563dce;
         --primary-300: #4238bd;
+        --primary-400: #302fa2;
         --secondary: #e9e7ff;
         --tertiary: #ffc00e;
 
@@ -70,8 +71,27 @@
 
       .building1 .side-wall {
         background-color: var(--primary-100);
+        padding-top: 7px;
         height: 280px;
         width: 63px;
+        overflow: hidden;
+      }
+
+      .building1 .side-wall .window {
+        background-color: var(--primary-400);
+        display: inline-block;
+        border-top-left-radius: 20px;
+        border-bottom-left-radius: 20px;
+        margin-left: 15px;
+        margin-bottom: 10px;
+        width: 100%;
+        height: 28px;
+      }
+
+      .building1 .side-wall .window.taller {
+        border-top-left-radius: 20px;
+        border-bottom-left-radius: 20px;
+        height: 48px;
       }
 
       .floor {
@@ -100,7 +120,14 @@
           <span class="window"></span>
           <span class="window"></span>
         </div>
-        <div class="side-wall"></div>
+        <div class="side-wall">
+          <span class="window taller"></span>
+          <span class="window"></span>
+          <span class="window"></span>
+          <span class="window"></span>
+          <span class="window"></span>
+          <span class="window"></span>
+        </div>
       </div>
     </div>
     <div class="floor"></div>
