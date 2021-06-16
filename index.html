@@ -4,11 +4,105 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Static Template</title>
+    <title>Cityscape</title>
+    <style>
+      :root {
+        --primary: #7465ff;
+        --primary-100: #523fd1;
+        --primary-200: #563dce;
+        --primary-300: #4238bd;
+        --secondary: #e9e7ff;
+        --tertiary: #ffc00e;
+
+        --floor-height: 80px;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      .content {
+        height: calc(100vh - var(--floor-height));
+        position: relative;
+      }
+
+      .building1 {
+        bottom: 0;
+        display: flex;
+        left: 100px;
+        position: absolute;
+      }
+
+      .building1 .front {
+        background-color: var(--primary);
+        clip-path: polygon(0 20%, 100% 0, 100% 100%, 0 100%);
+        height: 280px;
+        padding: 70px 0 0;
+        width: 102px;
+        text-align: center;
+      }
+
+      .building1 .front .window {
+        background-color: var(--primary-200);
+        border-radius: 100%;
+        display: inline-block;
+        margin-bottom: 10px;
+        height: 28px;
+        width: 25px;
+      }
+
+      .building1 .front .window:nth-child(1),
+      .building1 .front .window:nth-child(12) {
+        background-color: var(--primary-300);
+      }
+
+      .building1 .front .window:nth-child(3),
+      .building1 .front .window:nth-child(7) {
+        background-color: var(--tertiary);
+      }
+
+      .building1 .front .window:nth-child(3n + 1),
+      .building1 .front .window:nth-child(3n + 2) {
+        margin-right: 1.5px;
+      }
+
+      .building1 .side-wall {
+        background-color: var(--primary-100);
+        height: 280px;
+        width: 63px;
+      }
+
+      .floor {
+        background-color: var(--secondary);
+        height: var(--floor-height);
+      }
+    </style>
   </head>
   <body>
-    <h1>
-      This is a static template, there is no bundler or bundling involved!
-    </h1>
+    <div class="content">
+      <div class="building1">
+        <div class="front">
+          <span class="window"></span>
+          <span class="window"></span>
+          <span class="window"></span>
+          <span class="window"></span>
+          <span class="window"></span>
+          <span class="window"></span>
+          <span class="window"></span>
+          <span class="window"></span>
+          <span class="window"></span>
+          <span class="window"></span>
+          <span class="window"></span>
+          <span class="window"></span>
+          <span class="window"></span>
+          <span class="window"></span>
+          <span class="window"></span>
+        </div>
+        <div class="side-wall"></div>
+      </div>
+    </div>
+    <div class="floor"></div>
   </body>
 </html>
