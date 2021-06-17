@@ -8,14 +8,27 @@
     <style>
       :root {
         --primary: #7465ff;
+        --primary-50: #a39fff;
         --primary-100: #523fd1;
         --primary-200: #563dce;
         --primary-300: #4238bd;
         --primary-400: #302fa2;
+        --primary-500: #9f9cf5;
+        --primary-600: #7768ef;
+        --primary-700: #7364ff;
         --secondary: #e9e7ff;
+        --secondary-100: #cdccfe;
         --tertiary: #ffc00e;
+        --black: #000;
 
-        --floor-height: 80px;
+        --ground-height: 65px;
+        --ground-border: 12px;
+        --ground-full-height: calc(var(--ground-height) + var(--ground-border));
+
+        --building-1-offset-left: 327px;
+        --building-1-front-width: 130px;
+        --building-1-side-width: 80px;
+        --building-1-height: 379px;
       }
 
       * {
@@ -24,24 +37,29 @@
         box-sizing: border-box;
       }
 
+      .frame {
+        border-left: 60px solid var(--black);
+        border-right: 60px solid var(--black);
+      }
+
       .content {
-        height: calc(100vh - var(--floor-height));
+        height: calc(100vh - var(--ground-full-height));
         position: relative;
       }
 
       .building1 {
         bottom: 0;
         display: flex;
-        left: 100px;
+        left: var(--building-1-offset-left);
         position: absolute;
       }
 
       .building1 .front {
         background-color: var(--primary);
-        clip-path: polygon(0 20%, 100% 0, 100% 100%, 0 100%);
-        height: 280px;
-        padding: 70px 0 0;
-        width: 102px;
+        clip-path: polygon(0 19%, 100% 0, 100% 100%, 0 100%);
+        height: var(--building-1-height);
+        padding: 95px 0 0;
+        width: var(--building-1-front-width);
         text-align: center;
       }
 
@@ -49,9 +67,9 @@
         background-color: var(--primary-200);
         border-radius: 100%;
         display: inline-block;
-        margin-bottom: 10px;
-        height: 28px;
-        width: 25px;
+        margin-bottom: 25px;
+        height: 32px;
+        width: 30px;
       }
 
       .building1 .front .window:nth-child(1),
@@ -66,14 +84,14 @@
 
       .building1 .front .window:nth-child(3n + 1),
       .building1 .front .window:nth-child(3n + 2) {
-        margin-right: 1.5px;
+        margin-right: 7.5px;
       }
 
       .building1 .side-wall {
         background-color: var(--primary-100);
-        padding-top: 7px;
-        height: 280px;
-        width: 63px;
+        padding-top: 25px;
+        height: var(--building-1-height);
+        width: var(--building-1-side-width);
         overflow: hidden;
       }
 
@@ -83,53 +101,207 @@
         border-top-left-radius: 20px;
         border-bottom-left-radius: 20px;
         margin-left: 15px;
-        margin-bottom: 10px;
+        margin-bottom: 25px;
         width: 100%;
-        height: 28px;
+        height: 33px;
       }
 
       .building1 .side-wall .window.taller {
         border-top-left-radius: 20px;
         border-bottom-left-radius: 20px;
-        height: 48px;
+        height: 43px;
       }
 
-      .floor {
+      /* Building 2 */
+
+      .building2 {
+        bottom: 0;
+        display: flex;
+        left: calc(
+          var(--building-1-offset-left) + var(--building-1-front-width) + 45px
+        );
+        position: absolute;
+      }
+
+      .building2 .front {
         background-color: var(--secondary);
-        height: var(--floor-height);
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        height: 355px;
+        padding: 0;
+        width: var(--building-1-front-width);
+        text-align: center;
+        position: relative;
+      }
+
+      .building2 .front::before,
+      .building2 .front .floor0::before,
+      .building2 .front .generic-floor::before {
+        background-color: var(--primary-500);
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -5px;
+        height: 5px;
+        transform: translateY(-100%);
+        width: calc(100% + 5px);
+      }
+
+      .building2 .side-wall {
+        background-color: var(--secondary-100);
+        height: 355px;
+        position: relative;
+        width: 66px;
+      }
+
+      .building2 .side-wall::before {
+        background-color: var(--primary-600);
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 5px;
+        transform: translateY(-100%);
+        width: 100%;
+      }
+
+      .building2 .front .floor0 {
+        padding-top: 30px;
+        position: relative;
+        height: 72px;
+      }
+
+      .building2 .front .floor0 .window {
+        background-color: #7364ff;
+        display: inline-block;
+        height: 36px;
+        vertical-align: top;
+        width: 36px;
+      }
+
+      .building2 .front .floor0 .door {
+        background-color: #7364ff;
+        border-top-left-radius: 12px;
+        border-top-right-radius: 12px;
+        display: inline-block;
+        height: 42px;
+        margin: 0 5px;
+        width: 24px;
+      }
+
+      .building2 .front .generic-floor {
+        position: relative;
+        padding-top: 31px;
+        margin-bottom: 5px;
+        height: 58px;
+      }
+
+      .building2 .front :is(.generic-floor, .last-floor) .window {
+        background-color: #7364ff;
+        border-top-left-radius: 12px;
+        border-top-right-radius: 12px;
+        display: inline-block;
+        height: 27px;
+        width: 20px;
+      }
+
+      .building2
+        .front
+        :is(.generic-floor, .last-floor)
+        .window:not(:last-child) {
+        margin-right: 6px;
+      }
+
+      .building2 .front .last-floor {
+        padding-top: 62px;
+        flex-grow: 1;
+      }
+
+      .building2 .front .last-floor .window::before {
+        content: "";
+        border-radius: 100%;
+        background-color: var(--primary-500);
+        display: inline-block;
+        height: 14px;
+        transform: translateY(calc(-100% - 30px));
+        width: 14px;
+      }
+
+      .ground {
+        box-sizing: content-box;
+        border-top: var(--ground-border) solid var(--primary-50);
+        background-color: var(--secondary);
+        height: var(--ground-height);
       }
     </style>
   </head>
   <body>
-    <div class="content">
-      <div class="building1">
-        <div class="front">
-          <span class="window"></span>
-          <span class="window"></span>
-          <span class="window"></span>
-          <span class="window"></span>
-          <span class="window"></span>
-          <span class="window"></span>
-          <span class="window"></span>
-          <span class="window"></span>
-          <span class="window"></span>
-          <span class="window"></span>
-          <span class="window"></span>
-          <span class="window"></span>
-          <span class="window"></span>
-          <span class="window"></span>
-          <span class="window"></span>
+    <div class="frame">
+      <div class="content">
+        <div class="building1">
+          <div class="front">
+            <span class="window"></span>
+            <span class="window"></span>
+            <span class="window"></span>
+            <span class="window"></span>
+            <span class="window"></span>
+            <span class="window"></span>
+            <span class="window"></span>
+            <span class="window"></span>
+            <span class="window"></span>
+            <span class="window"></span>
+            <span class="window"></span>
+            <span class="window"></span>
+            <span class="window"></span>
+            <span class="window"></span>
+            <span class="window"></span>
+          </div>
+          <div class="side-wall">
+            <span class="window taller"></span>
+            <span class="window"></span>
+            <span class="window"></span>
+            <span class="window"></span>
+            <span class="window"></span>
+            <span class="window"></span>
+          </div>
         </div>
-        <div class="side-wall">
-          <span class="window taller"></span>
-          <span class="window"></span>
-          <span class="window"></span>
-          <span class="window"></span>
-          <span class="window"></span>
-          <span class="window"></span>
+        <div class="building2">
+          <div class="front">
+            <div class="last-floor">
+              <span class="window"></span>
+              <span class="window"></span>
+              <span class="window"></span>
+              <span class="window"></span>
+            </div>
+            <div class="generic-floor">
+              <span class="window"></span>
+              <span class="window"></span>
+              <span class="window"></span>
+              <span class="window"></span>
+            </div>
+            <div class="generic-floor">
+              <span class="window"></span>
+              <span class="window"></span>
+              <span class="window"></span>
+              <span class="window"></span>
+            </div>
+            <div class="generic-floor">
+              <span class="window"></span>
+              <span class="window"></span>
+              <span class="window"></span>
+              <span class="window"></span>
+            </div>
+            <div class="floor0">
+              <span class="window"></span>
+              <span class="door"></span>
+              <span class="window"></span>
+            </div>
+          </div>
+          <div class="side-wall"></div>
         </div>
       </div>
+      <div class="ground"></div>
     </div>
-    <div class="floor"></div>
   </body>
 </html>
