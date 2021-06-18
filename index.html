@@ -9,15 +9,19 @@
       :root {
         --primary: #7465ff;
         --primary-50: #a39fff;
+        --primary-60: #a39ffe;
         --primary-100: #523fd1;
         --primary-200: #563dce;
         --primary-300: #4238bd;
+        --primary-350: #513ece;
         --primary-400: #302fa2;
         --primary-500: #9f9cf5;
         --primary-600: #7768ef;
         --primary-700: #7364ff;
         --secondary: #e9e7ff;
         --secondary-100: #cdccfe;
+        --secondary-200: #c6c5f5;
+        --secondary-300: #cfccfc;
         --tertiary: #ffc00e;
         --black: #000;
 
@@ -29,6 +33,13 @@
         --building-1-front-width: 130px;
         --building-1-side-width: 80px;
         --building-1-height: 379px;
+
+        --building-2-side-width: 66px;
+        --building-2-height: 349px;
+
+        --building-3-front-width: 179px;
+        --building-3-side-width: 67px;
+        --building-3-height: 363px;
       }
 
       * {
@@ -128,7 +139,7 @@
         display: flex;
         flex-direction: column;
         justify-content: flex-end;
-        height: 355px;
+        height: var(--building-2-height);
         padding: 0;
         width: var(--building-1-front-width);
         text-align: center;
@@ -162,9 +173,9 @@
         display: flex;
         flex-direction: column;
         justify-content: flex-end;
-        height: 355px;
+        height: var(--building-2-height);
         position: relative;
-        width: 66px;
+        width: var(--building-2-side-width);
       }
 
       .building2 .side-wall::before {
@@ -235,7 +246,7 @@
 
       .building2 .front .last-floor,
       .building2 .side-wall .last-floor {
-        padding-top: 62px;
+        padding-top: 56px;
         flex-grow: 1;
       }
 
@@ -252,6 +263,98 @@
 
       .building2 .side-wall {
         text-align: center;
+      }
+
+      /* Building 3 */
+
+      .building3 {
+        bottom: 0;
+        display: flex;
+        left: calc(
+          var(--building-1-offset-left) + var(--building-1-front-width) * 2 +
+            var(--building-1-side-width) + var(--building-2-side-width) / 2 -
+            2px
+        );
+        position: absolute;
+      }
+
+      .building3 :is(.front, .side-wall) .window.on {
+        background-color: var(--tertiary);
+      }
+
+      .building3 .front {
+        background-color: var(--secondary-200);
+        height: var(--building-3-height);
+        position: relative;
+        padding: 25px 20px 0 10px;
+        width: var(--building-3-front-width);
+      }
+
+      .building3 .front::before {
+        background-color: var(--secondary);
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -5px;
+        height: 18px;
+        transform: translateY(-100%);
+        width: calc(100% + 10px);
+      }
+
+      .building3 .front > .window {
+        background-color: var(--primary-700);
+        display: inline-block;
+        height: 34px;
+        width: 149px;
+      }
+
+      .building3 :is(.front, .side-wall) .window:not(:last-child) {
+        margin-bottom: 20px;
+      }
+
+      .building3 .front .floor0 {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+      }
+
+      .building3 .front .floor0 .window {
+        background-color: var(--primary-700);
+        height: 34px;
+        width: 42px;
+      }
+
+      .building3 .front .floor0 .door {
+        background-color: var(--primary-700);
+        height: 48px;
+        width: 32px;
+      }
+
+      .building3 .side-wall {
+        background-color: var(--primary-60);
+        height: var(--building-3-height);
+        position: relative;
+        padding: 25px 10px 0;
+        text-align: center;
+        width: var(--building-3-side-width);
+      }
+
+      .building3 .side-wall::before {
+        background-color: var(--secondary-300);
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 5px;
+        height: 18px;
+        transform: translateY(-100%);
+        width: 100%;
+      }
+
+      .building3 .side-wall .window {
+        background-color: var(--primary-350);
+        display: inline-block;
+        height: 34px;
+        width: 29px;
       }
 
       .ground {
@@ -344,6 +447,27 @@
             <div class="floor0">
               <span class="window"></span>
             </div>
+          </div>
+        </div>
+        <div class="building3">
+          <div class="front">
+            <span class="window"></span>
+            <span class="window"></span>
+            <span class="window"></span>
+            <span class="window"></span>
+            <span class="window"></span>
+            <div class="floor0">
+              <span class="window"></span>
+              <span class="door"></span>
+              <span class="window"></span>
+            </div>
+          </div>
+          <div class="side-wall">
+            <span class="window"></span>
+            <span class="window on"></span>
+            <span class="window"></span>
+            <span class="window"></span>
+            <span class="window"></span>
           </div>
         </div>
       </div>
