@@ -357,6 +357,17 @@
         width: 29px;
       }
 
+      /* Bulding 4 */
+
+      .building4 {
+        left: calc(
+          var(--building-1-offset-left) + var(--building-1-front-width) * 2 +
+            var(--building-1-side-width) + var(--building-2-side-width) / 2 -
+            2px + var(--building-3-front-width) + var(--building-3-side-width) -
+            25px
+        );
+      }
+
       .ground {
         box-sizing: content-box;
         border-top: var(--ground-border) solid var(--primary-50);
@@ -465,6 +476,33 @@
           <div class="side-wall">
             <span class="window"></span>
             <span class="window on"></span>
+            <span class="window"></span>
+            <span class="window"></span>
+            <span class="window"></span>
+          </div>
+        </div>
+        <div class="building1 building4">
+          <div class="front">
+            <span class="window"></span>
+            <span class="window"></span>
+            <span class="window"></span>
+            <span class="window"></span>
+            <span class="window"></span>
+            <span class="window"></span>
+            <span class="window"></span>
+            <span class="window"></span>
+            <span class="window"></span>
+            <span class="window"></span>
+            <span class="window"></span>
+            <span class="window"></span>
+            <span class="window"></span>
+            <span class="window"></span>
+            <span class="window"></span>
+          </div>
+          <div class="side-wall">
+            <span class="window taller"></span>
+            <span class="window"></span>
+            <span class="window"></span>
             <span class="window"></span>
             <span class="window"></span>
             <span class="window"></span>
