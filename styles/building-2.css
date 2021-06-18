@@ -1,0 +1,136 @@
+.building2 {
+  bottom: 0;
+  display: flex;
+  left: calc(
+    var(--building-1-offset-left) + var(--building-1-front-width) + 45px
+  );
+  position: absolute;
+}
+
+.building2 .front {
+  background-color: var(--secondary);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  height: var(--building-2-height);
+  padding: 0;
+  width: var(--building-1-front-width);
+  text-align: center;
+  position: relative;
+}
+
+.building2 .front::before,
+.building2 .front .floor0::before,
+.building2 .front .generic-floor::before,
+.building2 .side-wall .floor0::before,
+.building2 .side-wall .generic-floor::before {
+  background-color: var(--primary-500);
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -5px;
+  height: 5px;
+  transform: translateY(-100%);
+  width: calc(100% + 5px);
+}
+
+.building2 .side-wall .floor0::before,
+.building2 .side-wall .generic-floor::before {
+  background-color: var(--primary-600);
+  left: 0;
+  width: 100%;
+}
+
+.building2 .side-wall {
+  background-color: var(--secondary-100);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  height: var(--building-2-height);
+  position: relative;
+  width: var(--building-2-side-width);
+}
+
+.building2 .side-wall::before {
+  background-color: var(--primary-600);
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 5px;
+  transform: translateY(-100%);
+  width: 100%;
+}
+
+.building2 .front .floor0,
+.building2 .side-wall .floor0 {
+  padding-top: 30px;
+  position: relative;
+  height: 72px;
+}
+
+.building2 .front .floor0 .window,
+.building2 .side-wall .floor0 .window {
+  background-color: #7364ff;
+  display: inline-block;
+  height: 36px;
+  vertical-align: top;
+  width: 36px;
+}
+
+.building2 .front .floor0 .door {
+  background-color: #7364ff;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+  display: inline-block;
+  height: 42px;
+  margin: 0 5px;
+  width: 24px;
+}
+
+.building2 .front .generic-floor,
+.building2 .side-wall .generic-floor {
+  position: relative;
+  padding-top: 31px;
+  margin-bottom: 5px;
+  height: 58px;
+}
+
+.building2 .front :is(.generic-floor, .last-floor) .window,
+.building2 .side-wall :is(.generic-floor, .last-floor) .window {
+  background-color: #7364ff;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+  display: inline-block;
+  height: 27px;
+  width: 20px;
+}
+
+.building2 .front :is(.generic-floor, .last-floor) .window:not(:last-child),
+.building2
+  .side-wall
+  :is(.generic-floor, .last-floor)
+  .window:not(:last-child) {
+  margin-right: 6px;
+}
+
+.building2 .front .last-floor,
+.building2 .side-wall .last-floor {
+  padding-top: 56px;
+  flex-grow: 1;
+}
+
+.building2 .front .last-floor .window::before,
+.building2 .side-wall .last-floor .window::before {
+  content: "";
+  border-radius: 100%;
+  background-color: var(--primary-500);
+  display: inline-block;
+  height: 14px;
+  transform: translateY(calc(-100% - 30px));
+  width: 14px;
+}
+
+.building2 .side-wall {
+  text-align: center;
+}

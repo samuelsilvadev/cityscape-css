@@ -1,0 +1,7 @@
+.building4 {
+  left: calc(
+    var(--building-1-offset-left) + var(--building-1-front-width) * 2 +
+      var(--building-1-side-width) + var(--building-2-side-width) / 2 - 2px +
+      var(--building-3-front-width) + var(--building-3-side-width) - 25px
+  );
+}

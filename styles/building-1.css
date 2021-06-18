@@ -1,0 +1,64 @@
+.building1 {
+  bottom: 0;
+  display: flex;
+  left: var(--building-1-offset-left);
+  position: absolute;
+}
+
+.building1 .front {
+  background-color: var(--primary);
+  clip-path: polygon(0 19%, 100% 0, 100% 100%, 0 100%);
+  height: var(--building-1-height);
+  padding: 95px 0 0;
+  width: var(--building-1-front-width);
+  text-align: center;
+}
+
+.building1 .front .window {
+  background-color: var(--primary-200);
+  border-radius: 100%;
+  display: inline-block;
+  margin-bottom: 25px;
+  height: 32px;
+  width: 30px;
+}
+
+.building1 .front .window:nth-child(1),
+.building1 .front .window:nth-child(12) {
+  background-color: var(--primary-300);
+}
+
+.building1 .front .window:nth-child(3),
+.building1 .front .window:nth-child(7) {
+  background-color: var(--tertiary);
+}
+
+.building1 .front .window:nth-child(3n + 1),
+.building1 .front .window:nth-child(3n + 2) {
+  margin-right: 7.5px;
+}
+
+.building1 .side-wall {
+  background-color: var(--primary-100);
+  padding-top: 25px;
+  height: var(--building-1-height);
+  width: var(--building-1-side-width);
+  overflow: hidden;
+}
+
+.building1 .side-wall .window {
+  background-color: var(--primary-400);
+  display: inline-block;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+  margin-left: 15px;
+  margin-bottom: 25px;
+  width: 100%;
+  height: 33px;
+}
+
+.building1 .side-wall .window.taller {
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+  height: 43px;
+}

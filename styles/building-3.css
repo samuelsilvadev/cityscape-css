@@ -1,0 +1,88 @@
+.building3 {
+  bottom: 0;
+  display: flex;
+  left: calc(
+    var(--building-1-offset-left) + var(--building-1-front-width) * 2 +
+      var(--building-1-side-width) + var(--building-2-side-width) / 2 - 2px
+  );
+  position: absolute;
+}
+
+.building3 :is(.front, .side-wall) .window.on {
+  background-color: var(--tertiary);
+}
+
+.building3 .front {
+  background-color: var(--secondary-200);
+  height: var(--building-3-height);
+  position: relative;
+  padding: 25px 20px 0 10px;
+  width: var(--building-3-front-width);
+}
+
+.building3 .front::before {
+  background-color: var(--secondary);
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -5px;
+  height: 18px;
+  transform: translateY(-100%);
+  width: calc(100% + 10px);
+}
+
+.building3 .front > .window {
+  background-color: var(--primary-700);
+  display: inline-block;
+  height: 34px;
+  width: 149px;
+}
+
+.building3 :is(.front, .side-wall) .window:not(:last-child) {
+  margin-bottom: 20px;
+}
+
+.building3 .front .floor0 {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.building3 .front .floor0 .window {
+  background-color: var(--primary-700);
+  height: 34px;
+  width: 42px;
+}
+
+.building3 .front .floor0 .door {
+  background-color: var(--primary-700);
+  height: 48px;
+  width: 32px;
+}
+
+.building3 .side-wall {
+  background-color: var(--primary-60);
+  height: var(--building-3-height);
+  position: relative;
+  padding: 25px 10px 0;
+  text-align: center;
+  width: var(--building-3-side-width);
+}
+
+.building3 .side-wall::before {
+  background-color: var(--secondary-300);
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 5px;
+  height: 18px;
+  transform: translateY(-100%);
+  width: 100%;
+}
+
+.building3 .side-wall .window {
+  background-color: var(--primary-350);
+  display: inline-block;
+  height: 34px;
+  width: 29px;
+}
