@@ -137,7 +137,9 @@
 
       .building2 .front::before,
       .building2 .front .floor0::before,
-      .building2 .front .generic-floor::before {
+      .building2 .front .generic-floor::before,
+      .building2 .side-wall .floor0::before,
+      .building2 .side-wall .generic-floor::before {
         background-color: var(--primary-500);
         content: "";
         position: absolute;
@@ -148,8 +150,18 @@
         width: calc(100% + 5px);
       }
 
+      .building2 .side-wall .floor0::before,
+      .building2 .side-wall .generic-floor::before {
+        background-color: var(--primary-600);
+        left: 0;
+        width: 100%;
+      }
+
       .building2 .side-wall {
         background-color: var(--secondary-100);
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
         height: 355px;
         position: relative;
         width: 66px;
@@ -166,13 +178,15 @@
         width: 100%;
       }
 
-      .building2 .front .floor0 {
+      .building2 .front .floor0,
+      .building2 .side-wall .floor0 {
         padding-top: 30px;
         position: relative;
         height: 72px;
       }
 
-      .building2 .front .floor0 .window {
+      .building2 .front .floor0 .window,
+      .building2 .side-wall .floor0 .window {
         background-color: #7364ff;
         display: inline-block;
         height: 36px;
@@ -190,14 +204,16 @@
         width: 24px;
       }
 
-      .building2 .front .generic-floor {
+      .building2 .front .generic-floor,
+      .building2 .side-wall .generic-floor {
         position: relative;
         padding-top: 31px;
         margin-bottom: 5px;
         height: 58px;
       }
 
-      .building2 .front :is(.generic-floor, .last-floor) .window {
+      .building2 .front :is(.generic-floor, .last-floor) .window,
+      .building2 .side-wall :is(.generic-floor, .last-floor) .window {
         background-color: #7364ff;
         border-top-left-radius: 12px;
         border-top-right-radius: 12px;
@@ -209,16 +225,22 @@
       .building2
         .front
         :is(.generic-floor, .last-floor)
+        .window:not(:last-child),
+      .building2
+        .side-wall
+        :is(.generic-floor, .last-floor)
         .window:not(:last-child) {
         margin-right: 6px;
       }
 
-      .building2 .front .last-floor {
+      .building2 .front .last-floor,
+      .building2 .side-wall .last-floor {
         padding-top: 62px;
         flex-grow: 1;
       }
 
-      .building2 .front .last-floor .window::before {
+      .building2 .front .last-floor .window::before,
+      .building2 .side-wall .last-floor .window::before {
         content: "";
         border-radius: 100%;
         background-color: var(--primary-500);
@@ -226,6 +248,10 @@
         height: 14px;
         transform: translateY(calc(-100% - 30px));
         width: 14px;
+      }
+
+      .building2 .side-wall {
+        text-align: center;
       }
 
       .ground {
@@ -298,7 +324,27 @@
               <span class="window"></span>
             </div>
           </div>
-          <div class="side-wall"></div>
+          <div class="side-wall">
+            <div class="last-floor">
+              <span class="window"></span>
+              <span class="window"></span>
+            </div>
+            <div class="generic-floor">
+              <span class="window"></span>
+              <span class="window"></span>
+            </div>
+            <div class="generic-floor">
+              <span class="window"></span>
+              <span class="window"></span>
+            </div>
+            <div class="generic-floor">
+              <span class="window"></span>
+              <span class="window"></span>
+            </div>
+            <div class="floor0">
+              <span class="window"></span>
+            </div>
+          </div>
         </div>
       </div>
       <div class="ground"></div>
