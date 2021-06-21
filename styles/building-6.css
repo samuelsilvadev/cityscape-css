@@ -1,0 +1,83 @@
+.building6 {
+  bottom: 0;
+  display: flex;
+  left: calc(
+    var(--building-1-offset-left) + var(--building-1-front-width) * 3 +
+      (var(--building-1-side-width) * 2) + var(--building-2-side-width) / 2 -
+      2px + var(--building-3-front-width) + var(--building-3-side-width) +
+      var(--building-5-front-width) + var(--building-5-side-width) - 40px
+  );
+  position: absolute;
+  height: var(--building-6-height);
+}
+
+.building6 .front {
+  background-color: var(--primary-1100);
+  padding: 13px 20px 0 10px;
+  width: var(--building-6-front-width);
+}
+
+.building6 .side-wall {
+  background-color: var(--primary-100);
+  padding: 13px 16px 0;
+  width: var(--building-6-side-width);
+}
+
+.building6 :is(.front, .side-wall) {
+  position: relative;
+}
+
+.building6 :is(.front, .side-wall)::before {
+  content: "";
+  height: 21px;
+  position: absolute;
+  top: 0;
+  transform: translateY(-100%);
+}
+
+.building6 .front::before {
+  background-color: var(--primary-100);
+  left: -5px;
+  width: calc(100% + 10px);
+}
+
+.building6 .side-wall::before {
+  background-color: var(--primary-400);
+  left: 5px;
+  width: 100%;
+}
+
+.building6 .front .door-wrapper {
+  background-color: var(--secondary-500);
+  border-top: 27px solid var(--primary-100);
+  margin-top: 11px;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  padding: 0 20px;
+  height: 97px;
+}
+
+.building6 .front .door-wrapper .door {
+  background-color: var(--primary-100);
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  display: inline-block;
+  height: 59px;
+  width: 32px;
+}
+
+.building6 :is(.front, .side-wall) .window {
+  background-color: var(--secondary-100);
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  display: inline-block;
+  height: 248px;
+  width: 32px;
+}
+
+.building6 .front .window:not(:last-child) {
+  margin-right: 3px;
+}
