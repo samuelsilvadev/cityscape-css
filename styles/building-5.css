@@ -1,0 +1,46 @@
+.bunding5 {
+  bottom: 0;
+  display: flex;
+  left: calc(
+    var(--building-1-offset-left) + var(--building-1-front-width) * 3 +
+      (var(--building-1-side-width) * 2) + var(--building-2-side-width) / 2 -
+      2px + var(--building-3-front-width) + var(--building-3-side-width) - 40px
+  );
+  position: absolute;
+  height: var(--building-5-height);
+}
+
+.bunding5 .front {
+  background-color: var(--primary-70);
+  width: var(--building-5-front-width);
+}
+
+.bunding5 .side-wall {
+  background-color: var(--primary-800);
+  width: var(--building-5-side-width);
+}
+
+.bunding5 :is(.front, .side-wall) {
+  position: relative;
+  height: 100%;
+}
+
+.bunding5 :is(.front, .side-wall)::before {
+  content: "";
+  height: 10px;
+  position: absolute;
+  top: 0;
+  transform: translateY(-100%);
+}
+
+.bunding5 .front::before {
+  background-color: var(--secondary-400);
+  left: -5px;
+  width: calc(100% + 10px);
+}
+
+.bunding5 .side-wall::before {
+  background-color: var(--primary-900);
+  left: 5px;
+  width: calc(100% + 5px);
+}
