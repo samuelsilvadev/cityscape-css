@@ -12,6 +12,7 @@
 
 .building5 .front {
   background-color: var(--primary-70);
+  padding: 12px 10px 0;
   width: var(--building-5-front-width);
 }
 
@@ -45,7 +46,36 @@
   width: calc(100% + 5px);
 }
 
-.building5 .front .floor0 {
+.building5 .front :is(.floor0, .generic-floor, .last-floor) {
+  display: flex;
+  justify-content: space-between;
+}
+
+.building5 .front .floor0 .door {
+  background-color: var(--primary-900);
+  display: inline-block;
   height: 46px;
   width: 30px;
+}
+
+.building5 .front .window {
+  background-color: var(--primary-900);
+  display: inline-block;
+  height: 34px;
+  width: 30px;
+}
+
+.building5 .front .floor0 .window {
+  background-color: var(--primary-1000);
+  vertical-align: top;
+  width: 72px;
+}
+
+.building5 .front .generic-floor,
+.building5 .front .last-floor {
+  margin-bottom: 26px;
+}
+
+.building5 .front .last-floor .window {
+  height: 47px;
 }
