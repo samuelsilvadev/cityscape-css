@@ -10,8 +10,26 @@
   clip-path: polygon(0 19%, 100% 0, 100% 100%, 0 100%);
   height: var(--building-1-height);
   padding: 95px 0 0;
-  width: var(--building-1-front-width);
   text-align: center;
+  width: var(--building-1-front-width);
+}
+
+.building1 .chimney {
+  background-color: var(--primary-60);
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  display: inline-block;
+  height: 26px;
+  left: 20px;
+  position: absolute;
+  top: 36px;
+  width: 13px;
+}
+
+.building1 .chimney:nth-child(2) {
+  height: 30px;
+  left: 38px;
+  top: 21px;
 }
 
 .building1 .front .window {
