@@ -8,6 +8,24 @@
   position: absolute;
 }
 
+.building3 .chimney {
+  background-color: var(--primary-50);
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  display: inline-block;
+  height: 26px;
+  right: calc(var(--building-3-side-width) + 10px);
+  position: absolute;
+  top: 0;
+  transform: translateY(calc(-100% - 18px));
+  width: 13px;
+}
+
+.building3 .chimney:nth-child(2) {
+  right: calc(var(--building-3-side-width) + 28px);
+  height: 35px;
+}
+
 .building3 :is(.front, .side-wall) .window.on {
   background-color: var(--tertiary);
 }
