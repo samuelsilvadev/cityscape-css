@@ -1,0 +1,45 @@
+.building7 {
+  bottom: calc(var(--building-2-height));
+  display: flex;
+  position: absolute;
+  left: calc(
+    var(--building-1-offset-left) + var(--building-1-front-width) +
+      var(--building-1-side-width) + 80px
+  );
+  height: var(--building-7-height);
+  z-index: -1;
+}
+
+.building7 .front {
+  background-color: var(--secondary-600);
+  width: var(--building-7-front-width);
+}
+
+.building7 .side-wall {
+  background-color: var(--primary-1600);
+  width: var(--building-7-side-width);
+}
+
+.building7 :is(.front, .side-wall) {
+  position: relative;
+}
+
+.building7 :is(.front, .side-wall)::before {
+  content: "";
+  height: 11px;
+  position: absolute;
+  top: 0;
+  transform: translateY(-100%);
+}
+
+.building7 .front::before {
+  background-color: var(--secondary-700);
+  left: -5px;
+  width: calc(100% + 5px);
+}
+
+.building7 .side-wall::before {
+  background-color: var(--primary-1400);
+  left: 5px;
+  width: 100%;
+}
