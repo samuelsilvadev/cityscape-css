@@ -1,0 +1,10 @@
+.building9 {
+  bottom: 190px;
+  left: calc(
+    var(--building-1-offset-left) + var(--building-1-front-width) +
+      var(--building-1-side-width) + var(--building-7-front-width) +
+      var(--building-7-side-width) + var(--building-8-front-width) +
+      var(--building-8-side-width) + 80px + 35px
+  );
+  z-index: -1;
+}
