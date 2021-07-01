@@ -18,7 +18,7 @@
   height: 100%;
   padding: 12px;
   width: var(--building-8-front-width);
-  transform: skewY(331deg) translateY(32px);
+  transform: skewY(324deg) translateY(41px);
 }
 
 .building8 .side-wall {
