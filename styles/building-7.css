@@ -1,5 +1,5 @@
 .building7 {
-  bottom: calc(var(--building-2-height));
+  bottom: calc(var(--building-2-height) - 17px);
   display: flex;
   position: absolute;
   left: calc(
@@ -35,11 +35,54 @@
 .building7 .front::before {
   background-color: var(--secondary-700);
   left: -5px;
-  width: calc(100% + 5px);
+  width: calc(100% + 10px);
 }
 
 .building7 .side-wall::before {
   background-color: var(--primary-1400);
   left: 5px;
   width: 100%;
+}
+
+.building7 .front .generic-floor,
+.building7 .side-wall .generic-floor {
+  padding: 8px 10px 10px;
+  position: relative;
+  height: 54px;
+}
+
+.building7 .front .generic-floor:not(:first-child) {
+  z-index: 1;
+}
+
+.building7 :is(.front, .side-wall) .generic-floor:not(:first-child)::before {
+  background-color: var(--secondary-700);
+  content: "";
+  display: inline-block;
+  height: 10px;
+  left: -5px;
+  position: absolute;
+  top: 0;
+  transform: translateY(-100%);
+  width: calc(100% + 10px);
+}
+
+.building7 .front .generic-floor .window {
+  background-color: var(--primary-100);
+  display: inline-block;
+  height: 28px;
+  width: 100%;
+}
+
+.building7 .side-wall .generic-floor .window {
+  background-color: var(--primary-400);
+  display: inline-block;
+  height: 28px;
+  width: 100%;
+}
+
+.building7 .side-wall .generic-floor:not(:first-child)::before {
+  background-color: var(--primary-1700);
+  left: 5px;
+  width: calc(100% + 2px);
 }

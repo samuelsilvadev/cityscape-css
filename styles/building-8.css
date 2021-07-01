@@ -1,0 +1,54 @@
+.building8 {
+  bottom: calc(var(--building-2-height) - 23px);
+  display: flex;
+  position: absolute;
+  height: var(--building-8-height);
+  left: calc(
+    var(--building-1-offset-left) + var(--building-1-front-width) +
+      var(--building-1-side-width) + var(--building-7-front-width) +
+      var(--building-7-side-width) + 80px + 55px
+  );
+  z-index: -1;
+}
+
+.building8 .front {
+  background-color: var(--primary-1400);
+  display: flex;
+  gap: 12px;
+  height: 100%;
+  padding: 12px;
+  width: var(--building-8-front-width);
+  transform: skewY(331deg) translateY(32px);
+}
+
+.building8 .side-wall {
+  background-color: var(--primary-700);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 18px 15px 0 18px;
+  width: var(--building-8-side-width);
+}
+
+.building8 .front .window {
+  background-color: var(--primary-100);
+  width: 50%;
+}
+
+.building8 .side-wall .window {
+  background-color: var(--primary-400);
+}
+
+.building8 .side-wall .window:nth-child(odd) {
+  height: 104px;
+  width: 100%;
+}
+
+.building8 .side-wall .window:nth-child(even) {
+  height: 48px;
+  width: 100%;
+}
+
+.building8 .side-wall .window:not(:last-child) {
+  margin-bottom: 34px;
+}
