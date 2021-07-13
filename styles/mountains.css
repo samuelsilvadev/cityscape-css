@@ -80,3 +80,40 @@
   height: 85px;
   width: 92px;
 }
+
+.mountain4 {
+  background-color: var(--primary-60);
+  clip-path: polygon(
+    0 100%,
+    45% 2%,
+    50% 0,
+    66% 40%,
+    76% 54%,
+    90% 60%,
+    100% 100%
+  );
+  right: 0;
+  height: 309px;
+  width: 430px;
+}
+
+.mountain4::before {
+  background-color: var(--secondary);
+  clip-path: polygon(
+    0 0,
+    100% 0,
+    100% 53%,
+    74% 100%,
+    61% 76%,
+    49% 100%,
+    35% 76%,
+    23% 100%,
+    0 52%
+  );
+  content: "";
+  display: inline-block;
+  left: 106px;
+  position: absolute;
+  height: 149px;
+  width: 200px;
+}
