@@ -1,7 +1,13 @@
 .cloud {
   position: absolute;
-  display: flex;
+  display: none;
   overflow: hidden;
+}
+
+@media (min-height: 900px) {
+  .cloud {
+    display: flex;
+  }
 }
 
 .cloud .shape {
