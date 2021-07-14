@@ -4,6 +4,11 @@
   overflow: hidden;
 }
 
+.cloud .shape {
+  position: absolute;
+  border-radius: 50%;
+}
+
 .cloud1 {
   height: 90px;
   left: 50px;
@@ -13,8 +18,6 @@
 
 .cloud1 .shape {
   background-color: var(--secondary);
-  position: absolute;
-  border-radius: 50%;
 }
 
 .cloud1 .shape:nth-child(1) {
@@ -52,10 +55,8 @@
   width: 200px;
 }
 
-.cloud2 .shape {
+:is(.cloud2, .cloud4) .shape {
   background-color: var(--secondary-360);
-  position: absolute;
-  border-radius: 50%;
 }
 
 .cloud2 .shape:nth-child(1) {
@@ -84,4 +85,40 @@
   left: unset;
   right: 390px;
   z-index: -1;
+}
+
+.cloud4 {
+  height: 112px;
+  left: unset;
+  right: 121px;
+  top: 205px;
+  width: 386px;
+}
+
+.cloud4 .shape:nth-child(1) {
+  bottom: -45px;
+  height: 100px;
+  left: 0;
+  width: 100px;
+}
+
+.cloud4 .shape:nth-child(2) {
+  bottom: -19px;
+  height: 100px;
+  left: 65px;
+  width: 100px;
+}
+
+.cloud4 .shape:nth-child(3) {
+  bottom: -50px;
+  height: 160px;
+  left: 136px;
+  width: 160px;
+}
+
+.cloud4 .shape:nth-child(4) {
+  bottom: -45px;
+  height: 90px;
+  right: 25px;
+  width: 90px;
 }
