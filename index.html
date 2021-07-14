@@ -75,6 +75,9 @@
         --building-8-front-width: 115px;
         --building-8-side-width: 94px;
         --building-8-height: 450px;
+
+        --toggle-width: 52px;
+        --toggle-check-width: calc(var(--toggle-width) / 2);
       }
 
       * {
@@ -113,6 +116,38 @@
         border-top: var(--ground-border) solid var(--primary-50);
         background-color: var(--secondary);
         height: var(--ground-height);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .switch-theme input {
+        display: none;
+      }
+
+      .switch-theme {
+        background-color: var(--primary);
+        border-radius: 30px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        padding-left: 1px;
+        padding-right: 1px;
+        height: 30px;
+        width: var(--toggle-width);
+      }
+
+      .switch-theme.checked::before {
+        transform: translateX(calc(100% - 2px));
+      }
+
+      .switch-theme::before {
+        background-color: var(--secondary);
+        border-radius: 50%;
+        content: "";
+        height: 26px;
+        transition: transform 200ms ease-in-out;
+        width: var(--toggle-check-width);
       }
     </style>
     <link rel="stylesheet" href="./styles/building-1.css" />
@@ -126,6 +161,7 @@
     <link rel="stylesheet" href="./styles/building-9.css" />
     <link rel="stylesheet" href="./styles/mountains.css" />
     <link rel="stylesheet" href="./styles/clouds.css" />
+    <script defer src="./scripts/toggle.js"></script>
   </head>
   <body>
     <div class="frame">
@@ -440,7 +476,19 @@
           </div>
         </div>
       </div>
-      <div class="ground"></div>
+      <div class="ground">
+        <label
+          for="switch-theme"
+          class="switch-theme"
+          data-script-id="toggle-label"
+        >
+          <input
+            id="switch-theme"
+            type="checkbox"
+            data-script-id="toggle-input"
+          />
+        </label>
+      </div>
     </div>
   </body>
 </html>
