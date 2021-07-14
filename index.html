@@ -159,12 +159,9 @@
         width: var(--toggle-check-width);
       }
 
-      .window.on {
-        transition: background-color 200ms ease 200ms;
-      }
-
       body.dark .window.on {
         background-color: var(--tertiary);
+        transition: background-color 200ms ease calc(var(--order, 1) * 200ms);
       }
     </style>
     <link rel="stylesheet" href="./styles/building-1.css" />
@@ -224,11 +221,11 @@
           <div class="front">
             <span class="window"></span>
             <span class="window"></span>
-            <span class="window on"></span>
+            <span style="--order: 1;" class="window on"></span>
             <span class="window"></span>
             <span class="window"></span>
             <span class="window"></span>
-            <span class="window on"></span>
+            <span style="--order: 2;" class="window on"></span>
             <span class="window"></span>
             <span class="window"></span>
             <span class="window"></span>
@@ -261,7 +258,7 @@
             </div>
             <div class="generic-floor">
               <span class="window"></span>
-              <span class="window on"></span>
+              <span style="--order: 2;" class="window on"></span>
               <span class="window"></span>
               <span class="window"></span>
             </div>
@@ -322,7 +319,7 @@
           </div>
           <div class="side-wall">
             <span class="window"></span>
-            <span class="window on"></span>
+            <span style="--order: 3;" class="window on"></span>
             <span class="window"></span>
             <span class="window"></span>
             <span class="window"></span>
@@ -344,7 +341,7 @@
             <span class="window"></span>
             <span class="window"></span>
             <span class="window"></span>
-            <span class="window on"></span>
+            <span style="--order: 4;" class="window on"></span>
             <span class="window"></span>
             <span class="window"></span>
           </div>
