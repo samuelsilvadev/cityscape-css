@@ -26,10 +26,6 @@
   height: 35px;
 }
 
-.building3 :is(.front, .side-wall) .window.on {
-  background-color: var(--tertiary);
-}
-
 .building3 .front {
   background-color: var(--secondary-200);
   height: var(--building-3-height);

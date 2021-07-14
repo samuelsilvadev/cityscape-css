@@ -46,11 +46,6 @@
   background-color: var(--primary-300);
 }
 
-.building1 .front .window:nth-child(3),
-.building1 .front .window:nth-child(7) {
-  background-color: var(--tertiary);
-}
-
 .building1 .front .window:nth-child(3n + 1),
 .building1 .front .window:nth-child(3n + 2) {
   margin-right: 7.5px;

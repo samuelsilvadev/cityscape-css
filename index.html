@@ -86,6 +86,14 @@
         box-sizing: border-box;
       }
 
+      body {
+        transition: background-color 200ms ease;
+      }
+
+      body.dark {
+        background-color: #333;
+      }
+
       .sun {
         background-color: var(--tertiary-100);
         border-radius: 50%;
@@ -149,6 +157,14 @@
         transition: transform 200ms ease-in-out;
         width: var(--toggle-check-width);
       }
+
+      .window.on {
+        transition: background-color 200ms ease 200ms;
+      }
+
+      body.dark .window.on {
+        background-color: var(--tertiary);
+      }
     </style>
     <link rel="stylesheet" href="./styles/building-1.css" />
     <link rel="stylesheet" href="./styles/building-2.css" />
@@ -162,6 +178,7 @@
     <link rel="stylesheet" href="./styles/mountains.css" />
     <link rel="stylesheet" href="./styles/clouds.css" />
     <script defer src="./scripts/toggle.js"></script>
+    <script defer src="./scripts/theme-manager.js"></script>
   </head>
   <body>
     <div class="frame">
@@ -206,11 +223,11 @@
           <div class="front">
             <span class="window"></span>
             <span class="window"></span>
+            <span class="window on"></span>
             <span class="window"></span>
             <span class="window"></span>
             <span class="window"></span>
-            <span class="window"></span>
-            <span class="window"></span>
+            <span class="window on"></span>
             <span class="window"></span>
             <span class="window"></span>
             <span class="window"></span>
@@ -243,7 +260,7 @@
             </div>
             <div class="generic-floor">
               <span class="window"></span>
-              <span class="window"></span>
+              <span class="window on"></span>
               <span class="window"></span>
               <span class="window"></span>
             </div>
@@ -317,6 +334,7 @@
             <span class="window"></span>
             <span class="window"></span>
             <span class="window"></span>
+            <span class="window on"></span>
             <span class="window"></span>
             <span class="window"></span>
             <span class="window"></span>
@@ -325,8 +343,7 @@
             <span class="window"></span>
             <span class="window"></span>
             <span class="window"></span>
-            <span class="window"></span>
-            <span class="window"></span>
+            <span class="window on"></span>
             <span class="window"></span>
             <span class="window"></span>
           </div>
@@ -377,7 +394,7 @@
             <span class="window taller"></span>
             <span class="window"></span>
             <span class="window"></span>
-            <span class="window"></span>
+            <span class="window on"></span>
             <span class="window"></span>
             <span class="window"></span>
           </div>
@@ -387,7 +404,7 @@
             <span class="window"></span>
             <span class="window"></span>
             <span class="window"></span>
-            <span class="window"></span>
+            <span class="window on"></span>
             <div class="door-wrapper">
               <span class="door"></span>
               <span class="door"></span>
@@ -485,7 +502,7 @@
           <input
             id="switch-theme"
             type="checkbox"
-            data-script-id="toggle-input"
+            data-script-id="toggle-input theme-controller"
           />
         </label>
       </div>
