@@ -108,7 +108,7 @@
 
 .building2 .front .floor0 .window,
 .building2 .side-wall .floor0 .window {
-  background-color: #7364ff;
+  background-color: var(--primary-700);
   display: inline-block;
   height: 36px;
   vertical-align: top;
@@ -116,7 +116,7 @@
 }
 
 .building2 .front .floor0 .door {
-  background-color: #7364ff;
+  background-color: var(--primary-700);
   border-top-left-radius: 12px;
   border-top-right-radius: 12px;
   display: inline-block;
@@ -133,9 +133,8 @@
   height: 58px;
 }
 
-.building2 .front :is(.generic-floor, .last-floor) .window,
-.building2 .side-wall :is(.generic-floor, .last-floor) .window {
-  background-color: #7364ff;
+.building2 :is(.generic-floor, .last-floor) .window {
+  background-color: var(--primary-700);
   border-top-left-radius: 12px;
   border-top-right-radius: 12px;
   display: inline-block;
