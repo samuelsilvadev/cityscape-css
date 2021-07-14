@@ -1,12 +1,12 @@
 .cloud {
   position: absolute;
+  display: flex;
+  overflow: hidden;
 }
 
 .cloud1 {
-  display: flex;
   height: 90px;
   left: 50px;
-  overflow: hidden;
   top: 350px;
   width: 300px;
 }
@@ -42,5 +42,39 @@
   bottom: -45px;
   height: 90px;
   right: 0;
+  width: 90px;
+}
+
+.cloud2 {
+  height: 90px;
+  left: 224px;
+  top: 350px;
+  width: 200px;
+}
+
+.cloud2 .shape {
+  background-color: var(--secondary-360);
+  position: absolute;
+  border-radius: 50%;
+}
+
+.cloud2 .shape:nth-child(1) {
+  bottom: -58px;
+  height: 100px;
+  left: 0;
+  width: 100px;
+}
+
+.cloud2 .shape:nth-child(2) {
+  bottom: -25px;
+  height: 100px;
+  left: 50px;
+  width: 100px;
+}
+
+.cloud2 .shape:nth-child(3) {
+  bottom: -65px;
+  height: 90px;
+  left: 111px;
   width: 90px;
 }
