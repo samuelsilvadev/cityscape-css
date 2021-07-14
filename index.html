@@ -44,6 +44,7 @@
         --tertiary-100: #ffe38f;
         --black: #000;
         --dark: #333;
+        --white-100: #f5f3ed;
 
         --ground-height: 65px;
         --ground-border: 12px;
@@ -87,7 +88,8 @@
         box-sizing: border-box;
       }
 
-      body {
+      body,
+      .solar-star {
         transition: background-color 200ms ease;
       }
 
@@ -95,7 +97,11 @@
         background-color: var(--dark);
       }
 
-      .sun {
+      body.dark .solar-star {
+        background-color: var(--white-100);
+      }
+
+      .solar-star {
         background-color: var(--tertiary-100);
         border-radius: 50%;
         height: 195px;
@@ -181,7 +187,7 @@
   <body>
     <div class="frame">
       <div class="content">
-        <div class="sun"></div>
+        <div class="solar-star"></div>
         <div class="cloud cloud1">
           <span class="shape"></span>
           <span class="shape"></span>
