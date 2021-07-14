@@ -82,15 +82,13 @@
 
 .cloud3 {
   top: 225px;
-  left: unset;
-  right: 390px;
+  left: 1168px;
   z-index: -1;
 }
 
 .cloud4 {
   height: 112px;
-  left: unset;
-  right: 121px;
+  left: 1341px;
   top: 205px;
   width: 386px;
 }
@@ -126,8 +124,7 @@
 .cloud5 {
   height: 70px;
   top: 242px;
-  left: unset;
-  right: 50px;
+  left: 1542px;
   width: 256px;
   z-index: -1;
 }

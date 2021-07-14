@@ -101,6 +101,11 @@
       .content {
         height: calc(100vh - var(--ground-full-height));
         position: relative;
+        overflow: auto hidden;
+      }
+
+      .content::-webkit-scrollbar {
+        display: none;
       }
 
       .ground {
