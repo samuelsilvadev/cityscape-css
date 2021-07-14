@@ -78,3 +78,10 @@
   left: 111px;
   width: 90px;
 }
+
+.cloud3 {
+  top: 265px;
+  left: unset;
+  right: 250px;
+  z-index: -1;
+}
