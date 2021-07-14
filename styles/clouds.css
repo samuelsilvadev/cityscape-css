@@ -1,0 +1,46 @@
+.cloud {
+  position: absolute;
+}
+
+.cloud1 {
+  display: flex;
+  height: 90px;
+  left: 50px;
+  overflow: hidden;
+  top: 350px;
+  width: 300px;
+}
+
+.cloud1 .shape {
+  background-color: var(--secondary);
+  position: absolute;
+  border-radius: 50%;
+}
+
+.cloud1 .shape:nth-child(1) {
+  bottom: -45px;
+  height: 90px;
+  left: 0;
+  width: 90px;
+}
+
+.cloud1 .shape:nth-child(2) {
+  bottom: -20px;
+  height: 90px;
+  left: 50px;
+  width: 90px;
+}
+
+.cloud1 .shape:nth-child(3) {
+  bottom: -40px;
+  height: 130px;
+  left: 110px;
+  width: 130px;
+}
+
+.cloud1 .shape:nth-child(4) {
+  bottom: -45px;
+  height: 90px;
+  right: 0;
+  width: 90px;
+}
