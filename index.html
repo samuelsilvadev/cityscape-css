@@ -147,6 +147,22 @@
         justify-content: center;
       }
 
+      .state-label {
+        border-radius: 10px;
+        margin: 0 10px;
+        padding: 10px;
+      }
+
+      body:not(.dark) .state-label.day {
+        background-color: var(--primary);
+        color: var(--secondary-700);
+      }
+
+      body.dark .state-label.night {
+        background-color: var(--primary);
+        color: var(--secondary-700);
+      }
+
       .switch-theme input {
         display: none;
       }
@@ -509,6 +525,7 @@
         </div>
       </div>
       <div class="ground">
+        <p class="state-label day">Day</p>
         <label
           for="switch-theme"
           class="switch-theme"
@@ -520,6 +537,7 @@
             data-script-id="toggle-input theme-controller"
           />
         </label>
+        <p class="state-label night">Night</p>
       </div>
     </div>
   </body>
